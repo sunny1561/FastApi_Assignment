@@ -64,7 +64,7 @@ async def fetch_student(id: str = Path(...)):
 
 # Update student given id
 @app.patch("/students/{id}", response_model=Dict[str, str])
-async def update_student(id: str = Path(...), student: Student = Body(...)):
+async def update_student(id: str = Path(...), student: Student = Body(None)):
     student_dict = student.dict()
     result = student_collection.update_one({"_id": ObjectId(id)}, {"$set": student_dict})
     if result.modified_count == 1:
