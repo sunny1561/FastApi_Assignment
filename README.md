@@ -1,15 +1,17 @@
 # FastApi_Assignment
+# I hardcorded max_lmit for api call to 500 you can adjust as per requirement
 
+# also if you want too run the code on locak then i have comented redis_client in main.py use that
 
  kindly if you want to run the application in visual studio code then reun below command in terminal
  #to run fastapi application use below command
 # uvicorn main:app --reload
 
 # below is the base url
-# https://librarymanagement-cosmocloud-fastapi-74q6.onrender.com
+# https://fastapi-assignment-10.onrender.com/
 
-#below is for fastapi (make sure copy properly)
-# https://librarymanagement-cosmocloud-fastapi-74q6.onrender.com/docs 
+#below is for fastapi (make sure copy properly) 
+# https://fastapi-assignment-10.onrender.com/docs#/default/root__get
 
 for installing the  required package for mongodb and fastapi
 # pip install fastapi pymongo pydantic
