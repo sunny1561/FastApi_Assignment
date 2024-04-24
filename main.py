@@ -164,6 +164,10 @@ class Student(BaseModel):
     age: Optional[int]
     address: Optional[Address]
 rate_limiter=RateLimiter()
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Updated Library Management System by Sunny Kumar!"}  
+  
 # Create student
 @app.post("/students", response_model=Dict[str, str],dependencies=[Depends(rate_limiter.Rate_limiter)])
 async def create_student(student: Student):
