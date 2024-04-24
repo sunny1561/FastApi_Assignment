@@ -164,7 +164,8 @@ class Student(BaseModel):
     age: Optional[int]
     address: Optional[Address]
 rate_limiter=RateLimiter()
-@app.get("/")
+
+@app.get("/",dependencies=[Depends(rate_limiter.Rate_limiter)])
 async def root():
     return {"message": "Welcome to the Updated Library Management System by Sunny Kumar!"}  
   
@@ -212,4 +213,3 @@ async def delete_student(id: str = Path(...)):
         return {"message": "Student deleted successfully"}
     else:
         raise HTTPException(status_code=404, detail="Student not found")
-
